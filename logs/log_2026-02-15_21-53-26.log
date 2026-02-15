@@ -1,0 +1,16 @@
+[2026-02-15 21:53:26,682] root - INFO - ==================== Starting Data Ingestion ====================
+[2026-02-15 21:53:26,683] root - INFO - Data Ingestion Config: DatasetConfig(dataset_download_url='https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip', raw_data_dir='artifacts\\dataset\\raw_data', ingested_dir='artifacts\\dataset\\ingested')
+[2026-02-15 21:53:26,683] root - INFO - ==================== Starting Data Validation ====================
+[2026-02-15 21:53:26,683] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', serialized_object_dir='artifacts\\dataset\\serialized_object', books_csv_file='artifacts\\dataset\\ingested\\Books.csv', ratings_csv_file='artifacts\\dataset\\ingested\\Ratings.csv')
+[2026-02-15 21:53:26,684] root - INFO - Downloading dataset from: https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip into file: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 21:53:31,592] root - INFO - Dataset downloaded successfully at: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 21:53:31,594] root - INFO - Extracting zip file: artifacts\dataset\raw_data\Books_DataSet.zip into directory: artifacts\dataset\ingested
+[2026-02-15 21:53:32,058] root - INFO - Zip file extracted successfully into directory: artifacts\dataset\ingested
+[2026-02-15 21:53:32,058] root - INFO - ==================== Data Ingestion Completed ====================
+[2026-02-15 21:53:32,058] root - INFO - ==================== Starting Data Preprocessing ====================
+[2026-02-15 21:53:33,484] root - INFO - Books dataset shape: (271360, 8)
+[2026-02-15 21:53:33,484] root - INFO - Ratings dataset shape: (1149780, 3)
+[2026-02-15 21:53:34,542] root - INFO - Final dataset shape after preprocessing: (59850, 9)
+[2026-02-15 21:53:34,849] root - INFO - Cleaned data saved successfully at: artifacts\dataset\clean_data
+[2026-02-15 21:53:34,877] root - INFO - Serialized object saved successfully at: artifacts\dataset\serialized_object
+[2026-02-15 21:53:34,981] root - INFO - ==================== Data Preprocessing Completed ====================

@@ -2,3 +2,4 @@ from Recommendation_System_Books.pipeline.training_pipeline import TrainingPipel
 
 training_pipeline = TrainingPipeline()
 training_pipeline.start_data_ingestion()
+training_pipeline.start_data_validation()

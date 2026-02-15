@@ -2,7 +2,7 @@ import os
 import sys
 from Recommendation_System_Books.exception.exception_handler import AppException
 from Recommendation_System_Books.utils.utils import read_yaml_file
-from Recommendation_System_Books.entity.config_entity import DataIngestionConfig
+from Recommendation_System_Books.entity.config_entity import (DataIngestionConfig, DataValidationConfig)
 from Recommendation_System_Books.logger.log import logging
 from Recommendation_System_Books.constant import *
 
@@ -32,3 +32,28 @@ class AppConfiguration:
             return response
         except Exception as e:
             raise AppException(e, sys) from e
+        
+    def get_data_validation_config(self) -> DataValidationConfig:
+        try:
+            data_validation_config = self.config_info["data_validation_config"]
+            data_ingestion_config = self.config_info["data_ingestion_config"]
+            artifacts_dir = self.config_info["artifacts_config"]["artifacts_dir"]
+            dataset_dir = self.config_info["data_ingestion_config"]["dataset_dir"]
+
+            clean_data_dir = os.path.join(artifacts_dir, dataset_dir, data_validation_config["clean_data_dir"])
+            serialized_object_dir = os.path.join(artifacts_dir, dataset_dir, data_validation_config["serialized_object_dir"])
+            books_csv_file = os.path.join(artifacts_dir, dataset_dir, data_ingestion_config["ingested_dir"], data_validation_config["books_csv_file"])
+            ratings_csv_file = os.path.join(artifacts_dir, dataset_dir, data_ingestion_config["ingested_dir"], data_validation_config["ratings_csv_file"])
+
+            response = DataValidationConfig(
+                clean_data_dir=clean_data_dir,
+                serialized_object_dir=serialized_object_dir,
+                books_csv_file=books_csv_file,
+                ratings_csv_file=ratings_csv_file
+            )
+
+            logging.info(f"Data Validation Config: {response}")
+            return response
+        except Exception as e:
+            raise AppException(e, sys) from e
+            
