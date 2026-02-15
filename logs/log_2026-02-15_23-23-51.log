@@ -1,0 +1,25 @@
+[2026-02-15 23:23:51,919] root - INFO - ==================== Starting Data Ingestion ====================
+[2026-02-15 23:23:51,919] root - INFO - Data Ingestion Config: DatasetConfig(dataset_download_url='https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip', raw_data_dir='artifacts\\dataset\\raw_data', ingested_dir='artifacts\\dataset\\ingested')
+[2026-02-15 23:23:51,919] root - INFO - ==================== Starting Data Validation ====================
+[2026-02-15 23:23:51,919] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', serialized_object_dir='artifacts\\dataset\\serialized_object', books_csv_file='artifacts\\dataset\\ingested\\Books.csv', ratings_csv_file='artifacts\\dataset\\ingested\\Ratings.csv')
+[2026-02-15 23:23:51,920] root - INFO - ==================== Starting Data Transformation ====================
+[2026-02-15 23:23:51,920] root - INFO - Data Transformation Config: DataTransformationConfig(clean_data_file_path='artifacts\\dataset\\clean_data\\clean data.csv', transformed_data_dir='artifacts\\dataset\\transformed_data')
+[2026-02-15 23:23:51,920] root - INFO - Data Validation Config: DataValidationConfig(clean_data_dir='artifacts\\dataset\\clean_data', serialized_object_dir='artifacts\\dataset\\serialized_object', books_csv_file='artifacts\\dataset\\ingested\\Books.csv', ratings_csv_file='artifacts\\dataset\\ingested\\Ratings.csv')
+[2026-02-15 23:23:51,921] root - INFO - Downloading dataset from: https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip into file: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 23:23:56,696] root - INFO - Dataset downloaded successfully at: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 23:23:56,698] root - INFO - Extracting zip file: artifacts\dataset\raw_data\Books_DataSet.zip into directory: artifacts\dataset\ingested
+[2026-02-15 23:23:57,132] root - INFO - Zip file extracted successfully into directory: artifacts\dataset\ingested
+[2026-02-15 23:23:57,132] root - INFO - ==================== Data Ingestion Completed ====================
+[2026-02-15 23:23:57,132] root - INFO - ==================== Starting Data Preprocessing ====================
+[2026-02-15 23:23:58,349] root - INFO - Books dataset shape: (271360, 8)
+[2026-02-15 23:23:58,349] root - INFO - Ratings dataset shape: (1149780, 3)
+[2026-02-15 23:23:59,468] root - INFO - Final dataset shape after preprocessing: (59850, 9)
+[2026-02-15 23:23:59,709] root - INFO - Cleaned data saved successfully at: artifacts\dataset\clean_data
+[2026-02-15 23:23:59,736] root - INFO - Serialized object saved successfully at: artifacts\dataset\serialized_object
+[2026-02-15 23:23:59,808] root - INFO - ==================== Data Preprocessing Completed ====================
+[2026-02-15 23:23:59,809] root - INFO - ==================== Initiating data transformation process ====================
+[2026-02-15 23:23:59,809] root - INFO - Reading clean data from: artifacts\dataset\clean_data\clean data.csv
+[2026-02-15 23:23:59,959] root - INFO - Transformed data saved successfully at: artifacts\dataset\transformed_data
+[2026-02-15 23:23:59,961] root - INFO - Serialized object for book names saved successfully at: artifacts\dataset\serialized_object
+[2026-02-15 23:23:59,967] root - INFO - Transformed data saved successfully at: artifacts\dataset\serialized_object
+[2026-02-15 23:23:59,968] root - INFO - ==================== Data transformation process completed successfully ====================
