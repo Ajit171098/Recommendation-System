@@ -1,0 +1,4 @@
+from Recommendation_System_Books.pipeline.training_pipeline import TrainingPipeline
+
+training_pipeline = TrainingPipeline()
+training_pipeline.start_data_ingestion()

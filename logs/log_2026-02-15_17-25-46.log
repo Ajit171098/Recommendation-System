@@ -1,0 +1,7 @@
+[2026-02-15 17:25:46,559] root - INFO - ==================== Starting Data Ingestion ====================
+[2026-02-15 17:25:46,559] root - INFO - Data Ingestion Config: DatasetConfig(dataset_download_url='https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip', raw_data_dir='artifacts\\dataset\\raw_data', ingested_dir='artifacts\\dataset\\ingested')
+[2026-02-15 17:25:46,560] root - INFO - Downloading dataset from: https://github.com/Ajit171098/Kaggle-datasets/raw/refs/heads/main/Books_DataSet.zip into file: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 17:25:51,701] root - INFO - Dataset downloaded successfully at: artifacts\dataset\raw_data\Books_DataSet.zip
+[2026-02-15 17:25:51,702] root - INFO - Extracting zip file: artifacts\dataset\raw_data\Books_DataSet.zip into directory: artifacts\dataset\ingested
+[2026-02-15 17:25:52,330] root - INFO - Zip file extracted successfully into directory: artifacts\dataset\ingested
+[2026-02-15 17:25:52,330] root - INFO - ==================== Data Ingestion Completed ====================
