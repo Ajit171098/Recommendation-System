@@ -10,14 +10,9 @@ class TrainingPipeline:
         self.data_transformation = DataTransformation()
         self.model_trainer = ModelTrainer()
 
-    def start_data_ingestion(self):
-        self.data_ingestion.initiate_data_ingestion()
-
-    def start_data_validation(self):
-        self.data_validation.initiate_data_validation()
-
     def start_training_pipeline(self):
+        self.data_ingestion.initiate_data_ingestion()
+        self.data_validation.initiate_data_validation()
         self.data_transformation.initiate_data_transformation()
-
-    def start_model_trainer(self):
         self.model_trainer.initiate_model_trainer()
+
