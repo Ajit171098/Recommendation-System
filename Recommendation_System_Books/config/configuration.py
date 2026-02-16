@@ -2,7 +2,7 @@ import os
 import sys
 from Recommendation_System_Books.exception.exception_handler import AppException
 from Recommendation_System_Books.utils.utils import read_yaml_file
-from Recommendation_System_Books.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig)
+from Recommendation_System_Books.entity.config_entity import (DataIngestionConfig, DataValidationConfig, DataTransformationConfig, ModelTrainerConfig)
 from Recommendation_System_Books.logger.log import logging
 from Recommendation_System_Books.constant import *
 
@@ -73,5 +73,27 @@ class AppConfiguration:
             )
             logging.info(f"Data Transformation Config: {response}")
             return response
+        except Exception as e:
+            raise AppException(e, sys) from e
+        
+    def get_model_trainer_config(self) -> ModelTrainerConfig:
+        try:
+            model_trainer_config = self.config_info["model_trainer_config"]
+            data_transformation_config = self.config_info["data_transformation_config"]
+            artifacts_dir = self.config_info["artifacts_config"]["artifacts_dir"]
+            dataset_dir = self.config_info["data_ingestion_config"]["dataset_dir"]
+
+            trained_model_dir = os.path.join(artifacts_dir, dataset_dir, model_trainer_config["trained_model_dir"])
+            transformed_data_file_path = os.path.join(artifacts_dir, dataset_dir, data_transformation_config["transformed_data_dir"], "transformed_data.pkl")
+            model_file_name = model_trainer_config["model_file_name"]
+
+            response = ModelTrainerConfig(
+                transformed_data_file_path=transformed_data_file_path,
+                trained_model_dir=trained_model_dir,
+                model_file_name=model_file_name
+            )
+            logging.info(f"Model Trainer Config: {response}")
+            return response
+        
         except Exception as e:
             raise AppException(e, sys) from e
